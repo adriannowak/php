@@ -12,11 +12,5 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^5.5"
-    },
-
-    "autoload": {
-	"psr-4": {
-	    "EZN": "web/src/"
-	}	
     }
 }
