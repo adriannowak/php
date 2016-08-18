@@ -1,0 +1,14 @@
+{
+    "name": "anowak/example",
+    "description": "Przykładowy moduł composera",
+    "authors": [
+        {
+            "name": "Adrian Nowak",
+            "email": "anowak@vector.org.pl"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^5.5"
+    }
+}
