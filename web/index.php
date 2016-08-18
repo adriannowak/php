@@ -1,5 +1,7 @@
 <?php
 require_once "../vendor/autoload.php";
 
-phpinfo();
-?>
+
+$quiz = new Quiz\QuizResource();
+echo Quiz\QuizTools::format($quiz);
+
