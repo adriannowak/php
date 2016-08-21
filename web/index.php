@@ -1,18 +1,31 @@
 <?php
+use DI\Container;
+
 require_once "../vendor/autoload.php";
 
-$loader = new Twig_Loader_Filesystem("../web/Quiz/templates");
-
-$twig = new Twig_Environment($loader);
-$quiz = new Quiz\QuizResource();
+/** @var \DI\Container $container */
+$container = require "../app/bootstrap.php";
 
 
-echo $twig->render('lists.twig', array('quiz' => $quiz,
-    'info' => "| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+$dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
+    $r->addRoute('GET', '/', 'HomeController');
+    $r->addRoute('GET', '/quiz', ['Quiz\QuizController', 'showAll']);
+    $r->addRoute('GET', '/quiz/{id}', ['Quiz\QuizController', 'show']);
+});
 
-"));
+$route = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
+
+switch($route[0]) {
+    case FastRoute\Dispatcher::NOT_FOUND: {
+        echo "404 - Not found!";
+        break;
+    }
+    case FastRoute\Dispatcher::FOUND : {
+        $container->call($route[1], $route[2]);
+        break;
+    }
+    default : {
+        echo "501";
+    }
+}
 

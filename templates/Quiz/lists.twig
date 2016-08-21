@@ -1,0 +1,88 @@
+{%  extends "Quiz/main.twig" %}
+{% block title %} Lista quizow {% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title text-center">{{ quiz.getName() }}</div>
+            </div>
+            <div class="panel-body">
+                <form class="form" action="#">
+                    <input type="hidden" name="quiz" value="{{ quiz.getName() }}"/>
+                    <div class="form-group">
+                        <label for="password" class="text-danger">Dostęp do tego elementu wymaga podania hasła!</label>
+                        <div class="input-group">
+                            <div><input class="form-control" type="password" placeholder="Password" name="password" required/></div>
+                            <div class="input-group-btn">
+                                <button type="button" onclick="launchQuiz('{{ quiz.getUrl() }}')" class="btn btn-secondary">
+                                    <span class="glyphicon glyphicon-arrow-right"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+    {#<title>Quiz</title>#}
+    {#<meta charset="utf-8">#}
+    {#<meta http-equiv="X-UA-Compatible" content="IE=edge">#}
+    {#<meta name="viewport" content="width=device-width, initial-scale=1">#}
+    {#<link href="css/bootstrap.css" rel="stylesheet">#}
+    {#<link href="css/local.css" rel="stylesheet">#}
+    {#<script type="application/javascript">#}
+        {#window.onblur = function() {#}
+            {#console.log("BLUR");#}
+        {#}#}
+
+        {#document.addEventListener("fullscreenchange", function(ev) {#}
+           {#console.log(ev);#}
+        {#});#}
+
+        {#function launchQuiz(src) {#}
+            {#var element = document.createElement("iframe");#}
+            {#element.src = src;#}
+            {#element.width = 0;#}
+            {#element.height = 0;#}
+            {#document.documentElement.appendChild(element);#}
+            {#launchIntoFullscreen(element);#}
+        {#}#}
+
+        {#function launchIntoFullscreen(element) {#}
+            {#if(element.requestFullscreen) {#}
+                {#element.requestFullscreen();#}
+            {#} else if(element.mozRequestFullScreen) {#}
+                {#element.mozRequestFullScreen();#}
+            {#} else if(element.webkitRequestFullscreen) {#}
+                {#element.webkitRequestFullscreen();#}
+            {#} else if(element.msRequestFullscreen) {#}
+                {#element.msRequestFullscreen();#}
+            {#}#}
+        {#}#}
+
+        {#function exitFullscreen() {#}
+            {#if(document.exitFullscreen) {#}
+                {#document.exitFullscreen();#}
+            {#} else if(document.mozCancelFullScreen) {#}
+                {#document.mozCancelFullScreen();#}
+            {#} else if(document.webkitExitFullscreen) {#}
+                {#document.webkitExitFullscreen();#}
+            {#}#}
+        {#}#}
+
+
+
+    {#</script>#}
+{#</head>#}
+{#<body>#}
+
+{#<div class="container-fluid">#}
+    {#</div>#}
+{#</body>#}
+{#</html>#}

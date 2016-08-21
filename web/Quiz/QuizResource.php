@@ -17,7 +17,6 @@ class QuizResource {
 
     private $dateContainer = array();
 
-
     function __construct() {
         $this->name = "Przykładowy QUIZ!";
         $this->url = "https://docs.google.com/a/vector.org.pl/forms/d/e/1FAIpQLSdjEpYUWXJmXZUGs4DPut8kkt0LGneGEVCWNaH8aN2tBcdlNg/viewform?embedded=true";
@@ -41,8 +40,6 @@ class QuizResource {
         return $this->getDate(QuizResource::STOP_DATE);
     }
 
-
-
     private function getDate(int $type) {
         return $this->dateContainer[$type];
     }
@@ -50,4 +47,5 @@ class QuizResource {
     private function setDate(int $type, $value) {
         $this->dateContainer[$type] = $value;
     }
+
 }
