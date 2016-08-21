@@ -1,6 +1,5 @@
-Options +FollowSymLinks -MultiViews
 RewriteEngine On
 RewriteBase /
-RewriteCond %{REQUEST_URI}  .*/([^/]+)/?     [NC]
-RewriteCond %{REQUEST_URI} !^(index\.php|robots\.txt|img|fonts|js|css|scripts) [NC]
-RewriteRule  .*      /index.php?cat=%1 [L,NC,QSA]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [QSA,L]
