@@ -18,8 +18,8 @@ class QuizResource {
     private $dateContainer = array();
 
     function __construct() {
-        $this->name = "Przykładowy QUIZ!";
-        $this->url = "https://docs.google.com/a/vector.org.pl/forms/d/e/1FAIpQLSdjEpYUWXJmXZUGs4DPut8kkt0LGneGEVCWNaH8aN2tBcdlNg/viewform?embedded=true";
+        $this->name = "Powtórzenie HTML";
+        $this->url = "https://docs.google.com/forms/d/e/1FAIpQLSdfobu1FTD7uNAJbaojc75mRW_mcBzRlDXnwmNjUlSYpivS9Q/viewform";
         $this->setDate(QuizResource::START_DATE, "2016-01-01");
         $this->setDate(QuizResource::STOP_DATE, "2016-06-01");
     }
