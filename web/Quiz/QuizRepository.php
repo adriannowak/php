@@ -20,6 +20,6 @@ class QuizRepository {
         else if($id == 1002) {
             return new QuizResource("CSS część 1", "https://goo.gl/forms/4mTL2efEfFBMb2Cr2");
         }
-        return new QuizResource();
+        throw new Exception('Brak zasobu');
     }
 }
