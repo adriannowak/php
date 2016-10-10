@@ -17,9 +17,9 @@ class QuizResource {
 
     private $dateContainer = array();
 
-    function __construct() {
-        $this->name = "Powtórzenie HTML";
-        $this->url = "https://docs.google.com/forms/d/e/1FAIpQLSdfobu1FTD7uNAJbaojc75mRW_mcBzRlDXnwmNjUlSYpivS9Q/viewform";
+    function __construct($name, $url) {
+        $this->name = $name;
+        $this->url = $url;
         $this->setDate(QuizResource::START_DATE, "2016-01-01");
         $this->setDate(QuizResource::STOP_DATE, "2016-06-01");
     }
