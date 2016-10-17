@@ -20,6 +20,10 @@ class QuizRepository {
         else if($id == 1002) {
             return new QuizResource("CSS część 1", "https://goo.gl/forms/4mTL2efEfFBMb2Cr2");
         }
+        else if($id == 5555) {
+            return new QuizResource("Bazy danych - teoria", "https://goo.gl/forms/bfEdv9rKDXTlF76u2");
+        }
+
         throw new Exception('Brak zasobu');
     }
 }
