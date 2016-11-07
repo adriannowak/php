@@ -23,10 +23,10 @@ class QuizRepository {
         else if($id == 5555) {
             return new QuizResource("Bazy danych - teoria", "https://goo.gl/forms/bfEdv9rKDXTlF76u2");
         }
-        else if($id = 8444) {
+        else if($id == 8444) {
             return new QuizResource("Bazy danych - teoria", "https://goo.gl/forms/UJxlciSxtgbKMdux2");
         }
-        else if($id = 8888) {
+        else if($id == 8899) {
             return new QuizResource("Bazy danych - poprawa sprawdzianu", "https://goo.gl/forms/KfWXqqvhlQkIZ5Zt2");
         }
 
