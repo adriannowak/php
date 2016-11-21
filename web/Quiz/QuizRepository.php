@@ -30,6 +30,10 @@ class QuizRepository {
             return new QuizResource("Bazy danych - poprawa sprawdzianu", "https://goo.gl/forms/KfWXqqvhlQkIZ5Zt2");
         }
 
+        else if($id = 6363) {
+            return new QuizResource("Bazy danych - MySQL (1)", "https://goo.gl/forms/5l7fUiPkiNseKIS42");
+        }
+
         throw new Exception('Brak zasobu');
     }
 }
